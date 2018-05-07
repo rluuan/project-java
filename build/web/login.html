@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="_js/jquery-3.3.1.min.js"></script>
+    <link href='_front/css/bootstrap.min.css' rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <style>
+    #full_screen_main {
+        background: rgba(0, 0, 0, .5);
+    }
+    .full_screen {
+        background: url("_front/images/login.jpg") fixed center no-repeat;
+        height: 100%; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /*opacity: .6;*/
+    }
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+    .hour_now {
+        text-shadow: 1px 1px 3px #ddd;
+        font-family: initial;
+        background: rgba(1, 1, 1, 0.2);
+        color: white;
+        width: 280px;
+        padding: 10px;
+    }
+    .content-default {
+        font-family: 'Amatic SC', cursive;
+        font-size: 30px;
+        color: white;
+    }
+    .text-dinamic-rluan {
+        font-family: 'Amatic SC', cursive;
+        font-size: 50px;
+        color: white;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="full_screen">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12" style="margin: 0; padding: 0;">
+                    <div class="hour_now">  
+                        <h3>Current time: <span id="id_hournow"></span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="background: rgba(0, 0, 0, .8); height: 620px;">
+                <div class="col-2"></div>
+                <div class="col-5 mx-auto" style="margin-top: 150px;">
+                    <div class="card">  
+                        <form class="form-horizontal" role="form" method="POST" action="controllerlogin.do">
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <h2>Login</h2>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="form-group has-danger">
+                                        <label class="sr-only" for="email">Username</label>
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="paint-brush" style="width: 2.6rem"><i class="paint-brush"></i></div>
+                                            <input type="text" name="username" class="form-control" id="email"
+                                            placeholder="Username" required autofocus>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="form-group has-danger">
+                                        <label class="sr-only" for="email">E-Mail Address</label>
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                                            <input type="text" name="email" class="form-control" id="email"
+                                            placeholder="you@example.com" required autofocus>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="password">Password</label>
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                                            <input type="password" name="password" class="form-control" id="password"
+                                            placeholder="Password" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-control-feedback">
+                                        <span class="text-danger align-middle">
+                                            <!-- Put password error message here -->    
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="col-6" style="padding-top: .35rem">
+                                    <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" name="remember"
+                                            type="checkbox" >
+                                            <span style="padding-bottom: .15rem">Remember me</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top: 1rem">
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-sign-in"></i> Login</button>
+                                    <a class="btn btn-link" href="/password/reset">Forgot Your Password?</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-5" style="margin-top: 150px;"> 
+                    <div class="text-center">   
+                        <p class="text-dinamic-rluan">  
+
+                        </p>
+                    </div>
+                    <p class="content-default" style="margin-top: 50px;"> 
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit a ullam sequi nobis minima! Earum accusantium perspiciatis placeat reiciendis distinctio sit magnam alias sequi, dolorem tenetur! Eum omnis, in quidem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    $(function() {
+        let id_hour = setInterval(get_hournow, 1000);
+        let var_read_text_screen = setInterval(read_text_default_rluan, 300);
+
+        function get_hournow() {
+            let $data = new Date();
+            let obj_data = {
+                hour: $data.getHours(),
+                minutes: $data.getMinutes(), 
+                seconds: $data.getSeconds()
+            }
+            $("#id_hournow").text(obj_data.hour + ':' + obj_data.minutes + ':' +  obj_data.seconds);
+        }
+
+        let $text_default_rluan = "RLUAN! - EOQ :)";
+        var i = 0;
+        text_current = '';
+        function read_text_default_rluan() {
+            var lenght_text_screen_rluan = parseInt($text_default_rluan.length);
+            if (i == lenght_text_screen_rluan) {
+                i = 0;
+                $(".text-dinamic-rluan").empty();
+
+            } else {
+                text_current = $(".text-dinamic-rluan").text().trim();
+                    // text_current + $text_default_rluan[i];
+                    $(".text-dinamic-rluan").text(text_current + $text_default_rluan[i]);
+                    i++;
+                    text_current = '';
+
+                }
+            }
+            $(".text-dinamic-rluan").text();
+        });
+    </script>
+</body>
+</html>
